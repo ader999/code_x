@@ -19,10 +19,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from .views import index, plantillasexel # Adjusted import for app structure
 
 urlpatterns = [
     path('', index, name='index'),
     path("admin/", admin.site.urls, name='admin'),
     path('plantillasexel/', plantillasexel, name='plantillasexel'),
-] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0]) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
