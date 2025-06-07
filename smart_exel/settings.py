@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-wo_4c)ff2i^s$1cxi^2c7se1#x3yp!)^(5e09-w3s##0ot=pif
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['smartexel.codeader.com']
+ALLOWED_HOSTS = ['smartexel.codeader.com', '127.0.0.1']
 
 
 # Application definition
@@ -120,6 +120,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
