@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-wo_4c)ff2i^s$1cxi^2c7se1#x3yp!)^(5e09-w3s##0ot=pif
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smartexel.codeader.com']
 
 
 # Application definition
