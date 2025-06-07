@@ -17,9 +17,6 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from .views import index, plantillasexel # Adjusted import for app structure
 
 urlpatterns = [
@@ -28,5 +25,12 @@ urlpatterns = [
     path('plantillasexel/', plantillasexel, name='plantillasexel'),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# The following lines are typically used for development (DEBUG=True)
+# and are not needed when using WhiteNoise or a dedicated web server for static files in production.
+# If you need to serve media files in development with DEBUG=False (not typical for production setup),
+# you might need a different approach or ensure your web server handles it.
+# from django.conf import settings
+# from django.conf.urls.static import static
+# if settings.DEBUG: # Or a specific setting to enable this for dev even with DEBUG=False
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
