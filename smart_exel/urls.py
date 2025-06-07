@@ -25,4 +25,4 @@ urlpatterns = [
     path('', index, name='index'),
     path("admin/", admin.site.urls, name='admin'),
     path('plantillasexel/', plantillasexel, name='plantillasexel'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0]) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
